@@ -12,7 +12,24 @@
 <img alt="Snake" src="https://raw.githubusercontent.com/Norsico/Norsico/output/snake.svg">
 </picture>
 
-<br/><br/>
+<br/>
+
+<!-- About Me 区域开始 -->
+<h3>👋 About Me</h3>
+
+<p align="center">
+  嗨，你好！我是 <strong>Norsico</strong><br>
+  一名热爱AI技术且 <strong>Self-Motivated</strong> 的开发者<br>
+  🚀 专注于 <strong>LLM</strong>、<strong>Agent</strong> 与 <strong>AI自动化</strong> 的应用及算法开发 🚀
+</p>
+
+<p align="center">
+  相信AI不仅是工具，更是改变世界的引擎<br>
+  "𝓡𝓮𝓼𝓱𝓪𝓹𝓲𝓷𝓰 𝓽𝓱𝓮 𝔀𝓸𝓻𝓵𝓭 𝔀𝓲𝓽𝓱 𝓐𝓘."
+</p>
+<!-- About Me 区域结束 -->
+
+<br/>
 
 <img src="https://skillicons.dev/icons?i=python,pytorch,sklearn,tensorflow,ae,pr,ps,flutter,java,docker,mysql,linux,git,vscode&perline=14" />
 
