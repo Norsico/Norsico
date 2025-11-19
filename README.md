@@ -34,4 +34,10 @@
 <img src="https://github-readme-stats.vercel.app/api?username=Norsico&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&count_private=true" alt="Norsico's Stats" height="160" />
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=Norsico&theme=dark&hide_border=true&background=0d1117" alt="Streak" height="160" />
 
+<br/><br/>
+
+<!-- 这里的 ./bck.png 指的是读取当前分支(master)下的图片 -->
+<!-- 记得把它上传到 master 分支！ -->
+<img src="./bck.png" alt="Background" width="100%" />
+
 </div>
