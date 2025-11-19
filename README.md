@@ -14,30 +14,25 @@
 
   <br/>
   
-  <!-- 3. 贪吃蛇 (Snake) -->
-  <!-- 这里的链接指向 output 分支，这是自动生成的 -->
+  <!-- 3. 贪吃蛇 (自动适配深色/浅色模式) -->
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Norsico/Norsico/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Norsico/Norsico/output/github-contribution-grid-snake.svg">
-    <img alt="github contribution grid snake activity graph" src="https://raw.githubusercontent.com/Norsico/Norsico/output/github-contribution-grid-snake.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Norsico/Norsico/output/snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Norsico/Norsico/output/snake.svg">
+    <img alt="Snake" src="https://raw.githubusercontent.com/Norsico/Norsico/output/snake.svg">
   </picture>
 
   <br/><br/>
 
-  <!-- 4. 日历展示区域 (Table Layout for Side-by-Side) -->
+  <!-- 4. 日历展示 (纯图片，无文字标题) -->
   <table>
     <tr>
       <td align="center" width="50%">
-        <strong>Full Year Calendar</strong>
-        <br/><br/>
         <!-- 左侧：Isometric Calendar -->
-        <img src="https://raw.githubusercontent.com/Norsico/Norsico/output/metrics.plugin.isocalendar.svg" alt="Isometric Calendar" width="100%" />
+        <img src="https://raw.githubusercontent.com/Norsico/Norsico/output/iso.svg" alt="Isometric Calendar" width="100%" />
       </td>
       <td align="center" width="50%">
-        <strong>Commit Calendar (Current Year)</strong>
-        <br/><br/>
-        <!-- 右侧：Flat Calendar -->
-        <img src="https://raw.githubusercontent.com/Norsico/Norsico/output/metrics.plugin.calendar.svg" alt="Flat Calendar" width="100%" />
+        <!-- 右侧：Commit Calendar -->
+        <img src="https://raw.githubusercontent.com/Norsico/Norsico/output/cal.svg" alt="Flat Calendar" width="100%" />
       </td>
     </tr>
   </table>
