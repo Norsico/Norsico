@@ -1,10 +1,8 @@
 name: Update Readme
 
 on:
-  # 每天半夜自动运行
   schedule:
     - cron: "0 0 * * *" 
-  # 允许你手动触发（去Actions页面点击Run workflow）
   workflow_dispatch:
   push:
     branches:
@@ -16,7 +14,11 @@ jobs:
     timeout-minutes: 10
     
     steps:
-      # 1. 生成贪吃蛇 (Snake)
+      # 0. 检出代码 (这是为了防止 metrics 找不到路径)
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # 1. 生成贪吃蛇 (Snake) -> 输出到 dist 文件夹
       - name: generate-snake-game-from-github-contribution-grid
         uses: Platane/snk/svg-only@v3
         with:
@@ -25,7 +27,7 @@ jobs:
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      # 2. 生成左侧：全年的 3D 甚至日历 (Isometric Calendar)
+      # 2. 生成左侧：全年 3D 日历 (只生成，不提交)
       - name: Full year calendar (Isometric)
         uses: lowlighter/metrics@latest
         with:
@@ -34,8 +36,9 @@ jobs:
           base: ""
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
+          output_action: none # <--- 关键修改：禁止它自己提交
 
-      # 3. 生成右侧：普通日历 (Flat Calendar)
+      # 3. 生成右侧：普通日历 (只生成，不提交)
       - name: Commit calendar Current year
         uses: lowlighter/metrics@latest
         with:
@@ -44,9 +47,10 @@ jobs:
           base: ""
           plugin_calendar: yes
           plugin_calendar_limit: 1
+          output_action: none # <--- 关键修改：禁止它自己提交
 
-      # 4. 将生成的图片推送到仓库
-      - name: push github-contribution-grid-snake.svg to the output branch
+      # 4. 统一把 dist 文件夹里的所有图片推送到 output 分支
+      - name: push all svg to the output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
