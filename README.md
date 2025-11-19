@@ -18,6 +18,21 @@
 
 <br/><br/>
 
+<!-- [新增区域] 仓库概览 & 语言分析 -->
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="https://raw.githubusercontent.com/Norsico/Norsico/output/repos.svg" alt="Repositories" width="100%" />
+</td>
+<td align="center" width="50%">
+<img src="https://raw.githubusercontent.com/Norsico/Norsico/output/langs.svg" alt="Languages" width="100%" />
+</td>
+</tr>
+</table>
+
+<br/>
+
+<!-- 原有的日历区域 -->
 <table>
 <tr>
 <td align="center" width="50%">
@@ -36,8 +51,6 @@
 
 <br/><br/>
 
-<!-- 这里的 ./bck.png 指的是读取当前分支(master)下的图片 -->
-<!-- 记得把它上传到 master 分支！ -->
 <img src="./bck.png" alt="Background" width="100%" />
 
 </div>
