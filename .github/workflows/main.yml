@@ -11,7 +11,7 @@ on:
 jobs:
   update-readme:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20 # 稍微延长时间，因为步骤变多了
     permissions:
       contents: write
     
@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v3
 
       # =========================================
-      # 第一步：生成贪吃蛇并【强制推送】(重置 output 分支)
+      # 1. 生成贪吃蛇 (重置 output 分支)
       # =========================================
       - name: Generate Snake
         uses: Platane/snk/svg-only@v3
@@ -35,32 +35,66 @@ jobs:
         with:
           target_branch: output
           build_dir: dist
-          keep_history: false # 第一次运行重置分支，保证干净
+          keep_history: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # =========================================
-      # 第二步：生成 3D 日历并【追加推送】
+      # 2. [新增] 生成仓库概览 (Repositories)
+      # =========================================
+      - name: Repositories Metrics
+        uses: lowlighter/metrics@latest
+        with:
+          filename: repos.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: "" # 不显示头部基础信息，只显示插件内容
+          
+          # 插件配置
+          plugin_repositories: yes
+          plugin_repositories_featured: WePartner, Video-Materials-AutoGEN-Workstation
+          # ^ 这里我帮你把你那两个好项目置顶了，如果没有 pinned 会自动显示这两个
+          
+          committer_branch: output
+          committer_message: "Update repos metrics"
+          output_action: commit
+
+      # =========================================
+      # 3. [新增] 生成语言分析 (Languages)
+      # =========================================
+      - name: Languages Metrics
+        uses: lowlighter/metrics@latest
+        with:
+          filename: langs.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          
+          # 插件配置
+          plugin_languages: yes
+          plugin_languages_ignored: html, css # 忽略掉非核心代码，突显 Python/C++
+          plugin_languages_limit: 8
+          
+          committer_branch: output
+          committer_message: "Update languages metrics"
+          output_action: commit
+
+      # =========================================
+      # 4. 生成 3D 日历
       # =========================================
       - name: Isometric Calendar
         uses: lowlighter/metrics@latest
         with:
-          # 关键设置：让 Metrics 自己处理推送，不要手动 mv
           filename: iso.svg
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
           
-          # 告诉 Metrics 推送到 output 分支
           committer_branch: output
           committer_message: "Update iso calendar"
-          
-          # 必须设置 output_action 为 commit (这是默认值，显式写出来更保险)
           output_action: commit
 
       # =========================================
-      # 第三步：生成平面日历并【追加推送】
+      # 5. 生成平面日历
       # =========================================
       - name: Flat Calendar
         uses: lowlighter/metrics@latest
@@ -71,7 +105,6 @@ jobs:
           plugin_calendar: yes
           plugin_calendar_limit: 1
           
-          # 同样推送到 output 分支
           committer_branch: output
           committer_message: "Update flat calendar"
           output_action: commit
