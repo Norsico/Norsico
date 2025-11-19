@@ -1,55 +1,53 @@
-name: Update Readme
+<div align="center">
 
-on:
-  # 每天半夜自动运行
-  schedule:
-    - cron: "0 0 * * *" 
-  # 允许你手动触发（去Actions页面点击Run workflow）
-  workflow_dispatch:
-  push:
-    branches:
-    - main
+  <!-- 1. 动态打字欢迎语 -->
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=2F88FF&background=00000000&center=true&vCenter=true&width=435&lines=Hi,+I'm+Norsico;AI+Developer+&+Python+Expert;Focusing+on+LLMs,+Agents+&+RAG;Building+Cool+Automation+Tools" alt="Typing SVG" />
+  </a>
 
-jobs:
-  generate:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    
-    steps:
-      # 1. 生成贪吃蛇 (Snake)
-      - name: generate-snake-game-from-github-contribution-grid
-        uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+  <br/>
 
-      # 2. 生成左侧：全年的 3D 甚至日历 (Isometric Calendar)
-      - name: Full year calendar (Isometric)
-        uses: lowlighter/metrics@latest
-        with:
-          filename: dist/metrics.plugin.isocalendar.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
+  <!-- 2. 技能图标 -->
+  <p>
+    <img src="https://skillicons.dev/icons?i=python,pytorch,opencv,flask,c,cpp,java,mysql,docker,linux,git,vscode&perline=12" />
+  </p>
 
-      # 3. 生成右侧：普通日历 (Flat Calendar)
-      - name: Commit calendar Current year
-        uses: lowlighter/metrics@latest
-        with:
-          filename: dist/metrics.plugin.calendar.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_calendar: yes
-          plugin_calendar_limit: 1
+  <br/>
+  
+  <!-- 3. 贪吃蛇 (Snake) -->
+  <!-- 这里的链接指向 output 分支，这是自动生成的 -->
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Norsico/Norsico/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Norsico/Norsico/output/github-contribution-grid-snake.svg">
+    <img alt="github contribution grid snake activity graph" src="https://raw.githubusercontent.com/Norsico/Norsico/output/github-contribution-grid-snake.svg">
+  </picture>
 
-      # 4. 将生成的图片推送到仓库
-      - name: push github-contribution-grid-snake.svg to the output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  <br/><br/>
+
+  <!-- 4. 日历展示区域 (Table Layout for Side-by-Side) -->
+  <table>
+    <tr>
+      <td align="center" width="50%">
+        <strong>Full Year Calendar</strong>
+        <br/><br/>
+        <!-- 左侧：Isometric Calendar -->
+        <img src="https://raw.githubusercontent.com/Norsico/Norsico/output/metrics.plugin.isocalendar.svg" alt="Isometric Calendar" width="100%" />
+      </td>
+      <td align="center" width="50%">
+        <strong>Commit Calendar (Current Year)</strong>
+        <br/><br/>
+        <!-- 右侧：Flat Calendar -->
+        <img src="https://raw.githubusercontent.com/Norsico/Norsico/output/metrics.plugin.calendar.svg" alt="Flat Calendar" width="100%" />
+      </td>
+    </tr>
+  </table>
+
+  <br/>
+
+  <!-- 5. 底部基础统计 -->
+  <p align="center">
+    <img src="https://github-readme-stats.vercel.app/api?username=Norsico&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&count_private=true" alt="Norsico's Stats" height="160" />
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Norsico&theme=tokyonight&hide_border=true&background=0d1117" alt="Streak" height="160" />
+  </p>
+
+</div>
