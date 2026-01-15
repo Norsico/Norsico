@@ -63,11 +63,6 @@
 
 <br/>
 
-<img src="https://github-readme-stats.vercel.app/api?username=Norsico&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&count_private=true" alt="Norsico's Stats" height="160" />
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=Norsico&theme=dark&hide_border=true&background=0d1117" alt="Streak" height="160" />
-
-<br/><br/>
-
 <img src="./bck.png" alt="Background" width="100%" />
 
 </div>
