@@ -15,13 +15,13 @@
 <br/>
 
 <!-- About Me 区域开始 -->
-<h3>👋 About Me</h3>
+<!-- <h3>👋 About Me</h3> -->
 
-<p align="center">
+<!-- <p align="center">
   嗨，你好！我是 <strong>Norsico</strong><br>
   一名热爱AI技术且 <strong>Self-Motivated</strong> 的开发者<br>
   🚀 专注于 <strong>LLM</strong>、<strong>Agent</strong> 与 <strong>AI自动化</strong> 的应用及算法开发 🚀
-</p>
+</p> -->
 
 <p align="center">
   相信AI不仅是工具，更是改变世界的引擎<br>
